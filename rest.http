@@ -1,0 +1,63 @@
+
+#Signup
+
+POST http://localhost:3000/signup
+Content-Type: application/json
+
+{
+  "name": "ash",
+  "email":"ash2@email.com",
+  "password":"foobar",
+  "password_confirmation":"foobar"
+}
+
+###
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+  "email": "ash@email.com",
+  "password": "foobar"
+}
+
+###
+
+# GET /todos
+GET http://localhost:3000/todos
+Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE1NjE2NTAyNjV9.rarcScfCOpSz1A8gAe_sX2Zp8Rof7SpOhJAjc8BEJ1g
+
+###
+
+# POST /todos
+POST http://localhost:3000/todos
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE1NjE2NTAyNjV9.rarcScfCOpSz1A8gAe_sX2Zp8Rof7SpOhJAjc8BEJ1g
+
+{
+  "title": "Mozart",
+  "created_by": 1
+}
+
+###
+
+# PUT /todos/:id
+PUT http://localhost:3000/todos/1
+Content-Type: application/json
+
+{
+  "title": "Beethoven"
+}
+
+###
+
+# DELETE /todos/:id
+DELETE http://localhost:3000/todos/1
+
+# GET /todos/:todo_id/items
+$ http :3000/todos/2/items
+# POST /todos/:todo_id/items
+$ http POST :3000/todos/2/items name='Listen to 5th Symphony' done=false
+# PUT /todos/:todo_id/items/:id
+$ http PUT :3000/todos/2/items/1 done=true
+# DELETE /todos/:todo_id/items/1
+$ http DELETE :3000/todos/2/items/1
