@@ -22,6 +22,11 @@ Content-Type: application/json
 
 ###
 
+GET http://localhost:3000/auth/login
+Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE1NjM1NzA3MTh9.HfVBwb-zRbRLJTiWf94YhY0CD6kPjBj3hnVUuUPWj0Y
+
+###
+
 # GET /todos
 GET http://localhost:3000/todos
 Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE1NjE2NTAyNjV9.rarcScfCOpSz1A8gAe_sX2Zp8Rof7SpOhJAjc8BEJ1g
@@ -47,6 +52,43 @@ Content-Type: application/json
 {
   "title": "Beethoven"
 }
+
+###
+
+GET http://localhost:3000/feed
+Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE1NjM2MDA1NjZ9.Gn57ROOk7WEdaZLtOxzilAbMMhgjWP43ZbUSRHJewZw
+
+###
+
+POST http://localhost:3000/posts
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE1NjM2MDA1NjZ9.Gn57ROOk7WEdaZLtOxzilAbMMhgjWP43ZbUSRHJewZw
+
+{
+  "text": "test post",
+  "name": "test post",
+  "user_id": 1
+}
+
+###
+
+POST http://localhost:3000/posts/1/comments
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE1NjM2MDA1NjZ9.Gn57ROOk7WEdaZLtOxzilAbMMhgjWP43ZbUSRHJewZw
+
+{
+  "text": "test comment",
+  "name": "test comment",
+  "user_id": 1,
+  "post_id": 1
+}
+
+###
+
+
+GET http://localhost:3000/posts/1
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE1NjM2MDA1NjZ9.Gn57ROOk7WEdaZLtOxzilAbMMhgjWP43ZbUSRHJewZw
 
 ###
 
